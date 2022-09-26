@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Design</title>
+
+    <style>
+      body {
+        background: linear-gradient(
+          to bottom,
+          rgba(254, 254, 254, 1) 0%,
+          rgba(219, 219, 219, 1) 50%,
+          rgba(226, 226, 226, 1) 100%
+        );
+      }
+
+      head {
+        color: aliceblue;
+        max-width: 400px;
+      }
+
+      h1 {
+        color: #2d332f;
+        font-size: 35px;
+        text-align: center;
+        font-size: 33px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      hr {
+        max-width: 250px;
+        line-height: 10px;
+      }
+
+      h2 {
+        color: #2d332f;
+        font-size: 16px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: lighter;
+        margin-top: 2px;
+        margin-bottom: 0;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      ul {
+        padding: 0px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      li {
+        display: inline;
+        font-size: 14px;
+        margin: 0px 40px 0px 40px;
+      }
+
+      a {
+        color: #8b9385;
+        text-decoration: none;
+        text-align: center;
+        margin: 0px 40px 0px 40px;
+        padding: 0px;
+      }
+
+      .about:hover {
+        text-decoration: underline;
+        color: #2b2d29;
+      }
+
+      .portfolio:hover {
+        text-decoration: underline;
+        color: #2b2d29;
+      }
+
+      .services:hover {
+        text-decoration: underline;
+        color: #2b2d29;
+      }
+
+      img {
+        display: block;
+        border-radius: 10px;
+        margin: auto;
+        width: 500px;
+      }
+
+      p {
+        font-size: 13px;
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      button {
+        display: block;
+        margin: auto;
+        color: #0f2433;
+        background: aliceblue;
+        border-color: #2d332f;
+        padding: 10px 15px;
+        border-radius: 20px;
+        transition: 200ms ease-in-out;
+      }
+
+      button:hover {
+        color: aliceblue;
+        border-color: #2d332f;
+        background: #2d332f;
+        border-radius: 20px;
+        border-style: none;
+        cursor: pointer;
+      }
+
+      div {
+        font-family: monospace;
+        text-align: center;
+        padding: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Design Studio</h1>
+    <hr />
+    <h2>
+      Every Space has a
+      <strong>Story!</strong>
+    </h2>
+    <ul>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Interior_design#Interior_designer"
+          target="_blank"
+          class="about"
+        >
+          About
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Interior_design#Styles"
+          target="_blank"
+          class="portfolio"
+        >
+          Portfolio
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Interior_design#Galleryo"
+          target="_blank"
+          class="services"
+        >
+          Services
+        </a>
+      </li>
+    </ul>
+    <img
+      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/044/686/original/d971b946f1ad4733cbb662f1be5dc125.jpeg?1661555231"
+      alt="InteriorDesign"
+    />
+    <br />
+    <p>
+      Designing a space means shaping the experience that a person will have
+      inside it. An experience that will also affect their life and, of course,
+      their mood. Interior design is a project that defines how a space will
+      function, how it will look, and how it will appeal to the senses. It
+      should fit the needs, cultures and lifestyle of those that inhabit it.
+      <br />
+      <br />
+      The way we inhabit a space has a huge effect on our creativity, happiness,
+      and of course, our wellbeing, so it’s important to call in professional
+      help so that the design is thought-out and tends to all the details–the
+      acoustics, the surroundings, the positioning, and use of color all have to
+      be taken into account for the space to work and feel complete.
+    </p>
+    <br />
+
+    <button>Book an Appointment</button>
+    <div>
+      © 2022
+      <strong>Design Studio</strong>
+    </div>
+  </body>
+  <script>
+    function changeHeading(newHeading) {
+      let heading = document.querySelector("h2");
+      heading.innerHTML = newHeading;
+    }
+
+    function appointment() {
+      let fullName = prompt("What is your Full Name");
+      let email = prompt("What is your email address?");
+      let county = prompt("Do you live in Surrey? (yes or no)");
+      county = county.toLowerCase();
+      county = county.trim();
+
+      if (county === "yes") {
+        changeHeading(
+          `Thank you ${fullName}! We will contact you shortly on ${email}`
+        );
+      } else {
+        changeHeading(`Apologies ${fullName}, we dont cover your area!`);
+      }
+    }
+    let appointmentButton = document.querySelector("button");
+    appointmentButton.addEventListener("click", appointment);
+  </script>
+</html>
